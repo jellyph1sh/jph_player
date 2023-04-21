@@ -1,4 +1,4 @@
-Item = {}
+Item = {name = "", model = ""}
 
 function Item:new(name, model)
     local item = {}

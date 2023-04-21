@@ -1,4 +1,4 @@
-Player = {}
+Player = {name = "", surname = "", age = "", hunger = 100, thirst = 100, inventory, account}
 
 function Player:new(name, surname, age)
     local player = {}
@@ -7,11 +7,9 @@ function Player:new(name, surname, age)
     self.name = name
     self.surname = surname
     self.age = age
-    self.hunger = 100
-    self.thirst = 100
     self.inventory = Inventory:new(Config.InventorySlots)
     self.account = Account:new(Config.DefaultBalance)
-    self.Starve()
+    self:Starve()
     return player
 end
 
@@ -34,9 +32,9 @@ end
 function Player:Starve()
     Citizen.CreateThread(function()
         while true do
-            self.setHunger(self.getHunger() - Config.StarveHunger)
-            self.setThirst(self.getThirst() - Config.StarveThirst)
-
+            self:setHunger(self:getHunger() - Config.StarveHunger)
+            self:setThirst(self:getThirst() - Config.StarveThirst)
+            print("Hunger: "..self:getHunger().. "Thirst:".. self:getThirst())
             Citizen.Wait(1000)
         end
     end)

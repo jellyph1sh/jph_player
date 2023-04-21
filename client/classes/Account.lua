@@ -1,4 +1,4 @@
-Account = {}
+Account = {balance = 0}
 
 function Account:new(balance)
     local account = {}
@@ -17,6 +17,6 @@ function Account:deposit(amount)
 end
 
 function Account:transfer(targetAccount, amount)
-    self.widthraw(amount)
+    self:widthraw(amount)
     targetAccount:deposit(amount)
 end

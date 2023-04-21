@@ -7,7 +7,7 @@ author "JellyPh1sh"
 
 client_scripts {
     "client/classes/*.lua",
-    "client/player.lua"
+    "client/cl_player.lua"
 }
 
 shared_script "config.lua"

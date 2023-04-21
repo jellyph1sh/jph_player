@@ -1,4 +1,4 @@
-Inventory = {}
+Inventory = {items = {}, maxSlots = 5}
 
 function Inventory:new(maxSlots)
     local inventory = {}
